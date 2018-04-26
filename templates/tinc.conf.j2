@@ -1,0 +1,9 @@
+Name = {{ inventory_hostname_short }}
+AddressFamily = ipv4
+Interface = {{ tinc_vpn_interface }}
+{% for host in play_hosts %}
+{% if inventory_hostname_short != hostvars[host]['inventory_hostname_short'] %}
+ConnectTo = {{ hostvars[host]['inventory_hostname_short'] }}
+{% endif %}
+{% endfor %}
+Mode = {{ tinc_mode }}

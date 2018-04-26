@@ -1,0 +1,5 @@
+#!/bin/sh
+ip link set $INTERFACE up
+ip addr add {{ tinc_vpn_ip }}/32 dev $INTERFACE
+ip route add {{ tinc_vpn_network}}/{{ tinc_vpn_cidr }} dev $INTERFACE
+
