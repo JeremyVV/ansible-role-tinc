@@ -53,8 +53,8 @@ tinc_mode: switch
 
 
 # host_vars
-tinc_vpn_ip: 10.0.0.5
-tinc_host: 167.160.185.238
+tinc_vpn_ip: 10.0.0.2
+tinc_host: 8.8.8.8
 ```
 
 #### Example Playbook
@@ -67,8 +67,8 @@ tinc.yml playbook
 
 Here is an example host_var file
 ```yaml
-vpn_ip: 10.0.0.5
-tinc_host: 167.160.185.238
+vpn_ip: 10.0.0.2
+tinc_host: 8.8.8.8
 ```
 
 #### Testing
