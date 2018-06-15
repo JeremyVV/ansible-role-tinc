@@ -117,11 +117,10 @@
   meta: flush_handlers
 
 - name: ensure tinc is started
-  service: >
+  systemd: >
     name=tinc
     enabled=yes
     state=started
-    pattern=tincd -n {{ tinc_netname }}
 
 - name: add nodes to /etc/hosts (ansible_inventory resolves to tinc_vpn_ip)
   lineinfile: dest=/etc/hosts regexp='.*{{ item }}$' line="{{ hostvars[item].tinc_vpn_ip }} {{item}}" state=present
